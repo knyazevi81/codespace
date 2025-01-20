@@ -3,7 +3,6 @@ from sqlalchemy import ForeignKey, Date
 
 from src.database import Base
 
-
 class Logs(Base):
     __tablename__ = "users"
 

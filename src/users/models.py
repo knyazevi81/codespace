@@ -1,6 +1,7 @@
-from sqlalchemy.orm import mapped_column, Mapped
+from sqlalchemy.orm import mapped_column, Mapped, relationship
+from typing import List
 
-
+from src.codespace.models import Codespaces
 from src.database import Base
 
 
@@ -12,3 +13,5 @@ class Users(Base):
     hashed_password: Mapped[str] = mapped_column(nullable=False)
     tg_bot_token: Mapped[str]
     tg_user_id: Mapped[int]
+
+    codespaces: Mapped[List["Codespaces"]] = relationship()

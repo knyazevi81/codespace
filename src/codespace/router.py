@@ -4,7 +4,6 @@ from fastapi.responses import PlainTextResponse
 router = APIRouter(
     prefix="/codespace",
     tags=["codespace endpoint"],
-    docs="//docs"
 )
 
 @router.get("/raw", response_class=PlainTextResponse)
