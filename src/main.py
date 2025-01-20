@@ -4,10 +4,12 @@ from contextlib import asynccontextmanager
 
 from src.codespace.router import router as code_space_router
 
+from src.database import create_tables
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("init")
+    await create_tables()
     yield
 
 
