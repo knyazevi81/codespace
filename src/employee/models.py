@@ -19,3 +19,6 @@ class Employess(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
 
     log: Mapped[List["Logs"]] = relationship(back_populates="logs")
+
+    class Config:
+        from_attributes = True
