@@ -12,10 +12,10 @@ class Users(Base):
     login: Mapped[str] = mapped_column(unique=True, nullable=False)
     name: Mapped[str] = mapped_column(nullable=False)
     hashed_password: Mapped[str] = mapped_column(nullable=False)
-    tg_bot_token: Mapped[str]
-    tg_user_id: Mapped[int]
+    tg_bot_token: Mapped[str | None]
+    tg_user_id: Mapped[int | None]
 
-    codespaces: Mapped[List["Codespaces"]] = relationship()
+    #codespaces: Mapped[List["Codespaces"]] = relationship()
 
     class Config:
         from_attributes = True

@@ -5,8 +5,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    BASE64_SECRET_CODE_KEY: str | None
-    SECRET_KEY: str | None
+    BASE64_SECRET_CODE_KEY: str
+    SECRET_KEY: str
+    ALG: str
 
     @property
     def SECRET_CODE_KEY(cls) -> bytes:

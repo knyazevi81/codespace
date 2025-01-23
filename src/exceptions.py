@@ -9,6 +9,9 @@ class UserException(HTTPException):
         super().__init__(status_code=self.status_code, detail=self.detail)
 
 
-class UserDoesNotExist(UserException):
+class UserAlreadyExist(UserException):
     status_code: str = status.HTTP_400_BAD_REQUEST
-    detail: str = "User does not exist"
+    detail: str = "User already exist"
+
+class IncorrectLoginOrPasswordException(UserException):
+    status_code: status

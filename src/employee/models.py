@@ -2,13 +2,11 @@ from sqlalchemy.orm import mapped_column, Mapped, relationship
 from sqlalchemy import ForeignKey
 from typing import List
 
-
 from src.employee.logs.models import Logs
 from src.database import Base
 
-
-class Employess(Base):
-    __tablename__ = "employess"
+class Employees(Base):
+    __tablename__ = "employees"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     login: Mapped[str] = mapped_column(nullable=False)
@@ -18,7 +16,7 @@ class Employess(Base):
     expire: Mapped[int] = mapped_column(nullable=False)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), nullable=False)
 
-    log: Mapped[List["Logs"]] = relationship(back_populates="logs")
+    #logs: Mapped[List["Logs"]] = relationship("Logs", back_populates="employee")
 
     class Config:
         from_attributes = True
