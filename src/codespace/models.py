@@ -2,7 +2,6 @@ from sqlalchemy.orm import mapped_column, Mapped, relationship
 from sqlalchemy import ForeignKey
 from typing import List
 
-from src.employee.models import Employees
 from src.database import Base
 
 class Codespaces(Base):
